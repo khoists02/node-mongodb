@@ -22,7 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
   User.findById('5fbf1a0791eeac0891bf435c')
       .then(user=> {
-        req.user = new User(user.username, user.email, user.cart, user._id);
+        if (user) {
+          req.user = new User(user.username, user.email, user.cart, user._id);
+        }
+        
         // ✅ Push model User and all methods for req.user => 
         // example: req.user can use req.user.addToCart(product)
         next();
