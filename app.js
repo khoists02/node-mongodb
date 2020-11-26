@@ -28,7 +28,7 @@ app.use((req, res, next) => {
         next();
         // Middleware next function router !
       })
-      .catch(err=> console.log({err}));
+      .catch(err=> console.log(`🔴 ${err}`));
 });
 
 app.use('/admin', adminRoutes);
@@ -37,6 +37,6 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoConnect(()=> {
-  console.log('App listen port : http://localhost:3000/');
+  console.log('✅ App listen port : http://localhost:3000/');
   app.listen(3000);
 })

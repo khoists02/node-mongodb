@@ -15,7 +15,7 @@ class User {
 
     return db.collection('users')
       .insertOne(this)
-      .then(()=> console.log('Insert Success !'))
+      .then(()=> console.log('✅ Insert Success !'))
       .catch(err=> {
         throw err
       })
@@ -23,7 +23,6 @@ class User {
 
   addToCart(product) {
     const cartProductIndex = this.cart.items.findIndex(cp=> {
-      console.log({cp})
       return cp.productId.toString() === product._id.toString();
     });
 

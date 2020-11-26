@@ -24,7 +24,7 @@ class Product {
     }
 
     return dbOp.then(result=> {
-      // console.log({result});
+      console.log(`✅ ${result}`);
     })
     .catch(err=> {
       throw err;
@@ -64,7 +64,7 @@ class Product {
 
     return db.collection('products')
       .deleteOne({ _id: new mongoDb.ObjectID(prodId) })
-      .then(()=> console.log('Deleted !'))
+      .then(()=> console.log('✅ Deleted !'))
       .catch(err=> {
         throw err;
       });
