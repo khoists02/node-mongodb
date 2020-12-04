@@ -1,6 +1,5 @@
 const mongodb = require('mongodb');
 const { COMMON } = require('../constants');
-
 const MongoClient = mongodb.MongoClient;
 
 let _db;

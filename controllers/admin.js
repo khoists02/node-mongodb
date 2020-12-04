@@ -54,7 +54,6 @@ exports.postEditProduct = (req, res, next) => {
 
   Product.findById(prodId)
     .then(productData => {
-
       const product = new Product(
         updatedTitle,
         updatedPrice,
